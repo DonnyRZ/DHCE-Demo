@@ -83,7 +83,7 @@ npm run test:e2e
 npm run check
 ```
 
-Pada cloud machine yang sudah menyediakan Chromium, konfigurasi lokal memakai `/usr/bin/chromium`. CI memakai browser dari Playwright. Jika Linux lokal memerlukan library tambahan, gunakan `npx playwright install --with-deps chromium`.
+Pada cloud machine yang sudah menyediakan Chromium, konfigurasi lokal memakai `/usr/bin/chromium`. CI memakai channel Chrome yang sudah terpasang pada runner resmi GitHub (`DHCE_BROWSER_CHANNEL=chrome`), sehingga tidak perlu mengulang instalasi browser dan paket sistem. Jika Linux lokal memerlukan library tambahan, gunakan `npx playwright install --with-deps chromium`.
 
 Browser tests mencakup sepuluh halaman pada viewport 1440, 1280, dan 390 px, refresh, alur utama, state persistence, filter/sort/pagination/columns, comparison, evidence, keyboard/focus, ekspor CSV dan PDF, permission mode, reset, invalid routes, serta local storage yang diblokir. Axe memeriksa aturan WCAG A/AA yang dapat diautomasi pada empat halaman representatif. Ini tidak menggantikan audit aksesibilitas manual atau usability test bersama pengguna.
 
