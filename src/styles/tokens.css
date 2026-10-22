@@ -1,0 +1,23 @@
+:root {
+  --canvas: #f8fafc;
+  --panel: #fff;
+  --text: #0f172a;
+  --muted: #52627a;
+  --border: #e2e8f0;
+  --blue: #1d4ed8;
+  --blue-light: #eff6ff;
+  --sidebar: 228px;
+  --radius: 9px;
+  --shadow: 0 12px 40px #0f172a0d;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--canvas);
+  font-synthesis: none;
+}

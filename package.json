@@ -1,0 +1,20 @@
+{
+  "name": "dhce-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/domain.test.js",
+    "test:e2e": "npm run build && playwright test",
+    "check": "npm test && npm run test:e2e",
+    "format": "prettier --write src scripts tests index.html playwright.config.js README.md .github/workflows/deploy.yml docs/MVP_FEATURE_CHECKLIST.md",
+    "format:check": "prettier --check src scripts tests index.html playwright.config.js README.md .github/workflows/deploy.yml docs/MVP_FEATURE_CHECKLIST.md"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "prettier": "3.6.2"
+  }
+}

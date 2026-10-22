@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8fafc" />
+    <meta
+      name="description"
+      content="DHCE — leadership portfolio, succession, and evidence workspace."
+    />
+    <title>DHCE · Leadership Workspace</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./src/styles/index.css" />
+    <script type="module" src="./src/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Lewati navigasi</a>
+    <div id="app">
+      <div class="boot" role="status">Memuat leadership workspace…</div>
+    </div>
+    <dialog id="overlay" aria-labelledby="overlay-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script nomodule>
+      document.querySelector("#app").textContent =
+        "Gunakan browser modern yang mendukung JavaScript modules.";
+    </script>
+  </body>
+</html>

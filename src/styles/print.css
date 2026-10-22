@@ -1,0 +1,88 @@
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 12mm;
+  }
+  body {
+    background: white;
+  }
+  body > #app,
+  body > #toast,
+  .skip-link {
+    display: none !important;
+  }
+  dialog#overlay {
+    display: block;
+    position: static;
+    border: 0;
+    box-shadow: none;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+  dialog::backdrop {
+    display: none;
+  }
+  .dialog-header,
+  .dialog-footer {
+    display: none !important;
+  }
+  .dialog-body {
+    padding: 0;
+    overflow: visible;
+    max-height: none !important;
+  }
+  .print-content .metrics {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .print-content .metric {
+    min-height: 80px;
+    padding: 12px;
+  }
+  .print-content .metric strong {
+    font-size: 25px;
+  }
+  .print-content .overview-grid,
+  .print-content .detail-grid {
+    display: block;
+  }
+  .print-content .table-scroll,
+  .comparison-scroll {
+    overflow: visible;
+    max-height: none;
+  }
+  .print-content table {
+    font-size: 9px;
+    break-inside: auto;
+  }
+  .print-content tr {
+    break-inside: avoid;
+  }
+  .print-content th {
+    position: static !important;
+  }
+  .print-content .comparison {
+    min-width: 0;
+    width: 100%;
+  }
+  .print-content .comparison th:first-child {
+    width: 150px;
+  }
+  .print-content .comparison td {
+    padding: 9px;
+  }
+  .print-content .workspace-footer {
+    display: none;
+  }
+  .print-content .panel {
+    break-inside: auto;
+  }
+  .print-content a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
