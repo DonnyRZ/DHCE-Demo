@@ -95,7 +95,7 @@ BASE_URL=https://donnyrz.github.io/DHCE-Demo/ npm run test:e2e
 
 ## GitHub Pages
 
-Workflow `.github/workflows/deploy.yml` menjalankan dependency installation, domain tests, browser checks, dan build sebelum deployment dari `main`. Pull request menjalankan verifikasi tanpa deployment.
+Workflow `.github/workflows/deploy.yml` menjalankan dependency installation, domain tests, browser checks, dan build sebelum deployment dari `main`. Setelah deployment, job `public-verification` memeriksa HTTPS, revisi commit yang dilayani CDN, dan mengulangi browser suite pada alamat publik dengan TLS verification tetap aktif. Pull request menjalankan verifikasi tanpa deployment.
 
 Pemilik repository perlu mengatur **Settings → Pages → Build and deployment → Source: GitHub Actions** bila belum aktif. Membuat file workflow saja tidak mengaktifkan layanan Pages. Setelah aktif, commit yang lolos checks akan dipublikasikan ke:
 
