@@ -73,7 +73,15 @@ export function metric(
   const tag = href ? "a" : "div";
   return `<${tag} ${href ? `href="${e(href)}"` : ""} class="metric"><div><span class="metric-label">${e(label)}</span><strong>${e(value)}</strong><span class="metric-sub">${e(description)}</span></div><span class="metric-icon ${tone}">${icon(ico)}</span></${tag}>`;
 }
-export function header(title, subtitle = "", actions = "") {
+export function header(
+  title,
+  subtitle = "",
+  actions = "",
+  { compact = false } = {},
+) {
+  if (compact) {
+    return `<div class="page-toolbar"><h1 class="sr-only">${e(title)}</h1><div class="page-actions">${actions}</div></div>`;
+  }
   return `<div class="page-header"><div><h1>${e(title)}</h1>${subtitle ? `<p>${e(subtitle)}</p>` : ""}</div><div class="page-actions">${actions}</div></div>`;
 }
 export function tabs(items, active) {

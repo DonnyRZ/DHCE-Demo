@@ -29,6 +29,7 @@ export default function () {
       "Companies",
       "Temukan dan bandingkan kondisi leadership lintas BUMN.",
       listActions(),
+      { compact: true },
     ) +
     filters({
       placeholder: "Cari BUMN atau sektor…",

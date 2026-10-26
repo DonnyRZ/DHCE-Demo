@@ -30,6 +30,7 @@ export default function () {
       "Data Quality",
       "Pastikan evidence cukup, terkini, dan dapat ditelusuri untuk analisis leadership.",
       listActions(),
+      { compact: true },
     ) +
     `<div class="metrics">${qualityMetrics(state.scope, state.snapshot)
       .map((m) =>

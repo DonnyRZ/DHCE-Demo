@@ -208,7 +208,7 @@
   border: 1px solid white;
 }
 main {
-  padding: 22px 30px 28px;
+  padding: 16px 30px 28px;
   max-width: 1840px;
   margin: auto;
   min-height: calc(100vh - 72px);
@@ -216,21 +216,15 @@ main {
 main:focus {
   outline: none;
 }
-.breadcrumb {
+.page-toolbar {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--muted);
-  font-size: 11px;
-  margin-bottom: 23px;
-  min-height: 20px;
+  justify-content: flex-end;
+  margin-bottom: 12px;
 }
-.breadcrumb a {
-  color: var(--muted);
-}
-.as-of {
-  margin-left: auto;
-  font-size: 10px;
+.page-toolbar .page-actions {
+  width: auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 .page-header {
   display: flex;

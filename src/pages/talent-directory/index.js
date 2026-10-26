@@ -25,6 +25,7 @@ export default function () {
       "Talent Directory",
       "Profil profesional, pengalaman, dan kualitas evidence lintas BUMN.",
       listActions(),
+      { compact: true },
     ) +
     filters({
       placeholder: "Cari nama, jabatan, atau BUMN…",

@@ -30,6 +30,7 @@ export default function () {
       "Role Directory",
       "Arsitektur jabatan, requirement, dan ketersediaan successor.",
       listActions(),
+      { compact: true },
     ) +
     `<div class="segmented">${action("critical-toggle", "Semua Jabatan", "", "btn " + (!q.critical ? "selected" : ""), 'data-value=""')}${action("critical-toggle", "Critical Only", "", "btn " + (q.critical ? "selected" : ""), 'data-value="1"')}</div>` +
     filters({

@@ -31,6 +31,25 @@ for (const viewport of [
       await page.setViewportSize(viewport);
       await page.goto("#/" + path);
       await expect(page.locator("h1")).toContainText(title);
+      await expect(page.locator(".breadcrumb, .as-of")).toHaveCount(0);
+      if (
+        [
+          "overview",
+          "companies",
+          "roles",
+          "talent",
+          "risks",
+          "quality",
+        ].includes(path)
+      ) {
+        await expect(page.locator(".page-header")).toHaveCount(0);
+        await expect(page.locator("h1")).toHaveClass("sr-only");
+        const toolbar = await page.locator(".page-toolbar").boundingBox();
+        const topbar = await page.locator(".app-header").boundingBox();
+        expect(toolbar.y - (topbar.y + topbar.height)).toBeLessThanOrEqual(20);
+      } else {
+        await expect(page.locator("h1")).not.toHaveClass("sr-only");
+      }
       await expect(page.locator("main")).not.toContainText(
         "Halaman belum dapat dimuat",
       );
@@ -354,7 +373,7 @@ for (const path of [
 ])
   test("WCAG automated checks " + path, async ({ page }) => {
     await page.goto("#/" + path);
-    await expect(page.locator("h1")).toBeVisible();
+    await expect(page.locator("h1")).toBeAttached();
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
       .analyze();

@@ -5,7 +5,7 @@ import { sidebar } from "./components/sidebar.js";
 import { appHeader } from "./components/header.js";
 import { initializeDialog, toast } from "./components/dialog.js";
 import { tables } from "./components/data-table.js";
-import { e, link, note, action } from "./components/ui.js";
+import { link, note, action } from "./components/ui.js";
 import { initializeViews } from "./services/saved-views.js";
 import { setupActions } from "./services/actions.js";
 import overview from "./pages/overview/index.js";
@@ -98,7 +98,7 @@ function render() {
   document.body.classList.toggle("compact", state.density === "compact");
   document.querySelector("#app").innerHTML =
     sidebar() +
-    `<div class="workspace">${appHeader()}<main id="main" tabindex="-1"><div class="breadcrumb">${link("/overview", "Home")}<span>/</span>${r.parts[1] ? link("/" + kind, labels[kind] || "Workspace") + "<span>/</span><span>Detail</span>" : `<span>${e(labels[kind] || "Workspace")}</span>`}<span class="as-of">As of ${e(state.snapshot)}</span></div>${state.snapshot !== snapshots[0] ? note("Anda melihat snapshot historis. " + action("latest", "Kembali ke terbaru", "", "text-btn")) : ""}${content}<footer class="workspace-footer"><span>DHCE · Leadership intelligence</span>${action("about", "Tentang workspace", "info", "text-btn")}</footer></main></div>`;
+    `<div class="workspace">${appHeader()}<main id="main" tabindex="-1">${state.snapshot !== snapshots[0] ? note("Anda melihat snapshot historis. " + action("latest", "Kembali ke terbaru", "", "text-btn")) : ""}${content}<footer class="workspace-footer"><span>DHCE · Leadership intelligence</span>${action("about", "Tentang workspace", "info", "text-btn")}</footer></main></div>`;
   if (focus && r.path === previousPath) {
     const input = document.querySelector(`[data-focus="${CSS.escape(focus)}"]`);
     input?.focus({ preventScroll: true });

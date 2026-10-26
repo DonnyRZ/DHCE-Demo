@@ -42,6 +42,7 @@ export default function () {
       "Succession Risks",
       "Prioritaskan critical roles yang membutuhkan perhatian.",
       listActions(),
+      { compact: true },
     ) +
     `<div class="metrics">${metric("Total Critical Roles", s.total, "Dalam scope saat ini", "users")}${metric("Confirmed gaps", s.gaps, "Role tanpa successor Ready Now", "alert", "red")}${metric("Belum dapat dinilai", s.unknown, "Evidence belum mencukupi", "info", "neutral")}${metric("Dengan Ready Now", s.covered, "Minimal satu successor Ready Now", "check", "green")}</div><nav class="preset-row" aria-label="Preset risiko">${[
       ["", "Semua"],

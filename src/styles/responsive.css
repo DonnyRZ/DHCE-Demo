@@ -1,6 +1,6 @@
 @media (min-width: 1800px) {
   main {
-    padding: 30px 40px;
+    padding: 20px 40px 30px;
   }
   table {
     font-size: 13px;
@@ -62,7 +62,7 @@
     max-width: 150px;
   }
   main {
-    padding: 20px;
+    padding: 16px 20px 20px;
   }
   .metrics {
     gap: 12px;
@@ -231,13 +231,7 @@
     display: none;
   }
   main {
-    padding: 18px 16px;
-  }
-  .breadcrumb {
-    margin-bottom: 20px;
-  }
-  .as-of {
-    font-size: 9px;
+    padding: 16px;
   }
   .page-header {
     flex-direction: column;
